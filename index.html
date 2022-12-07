@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CS 4260 AI Final Project</title>
+  </head>
+  <body>
+    <h1>CS 4260 AI Final Project</h1>
+    <h2>Body Tracking Chrome Dino Game</h2>
+    <h3>Ericka Liu, Jack Long, Aadi Bajpai</h3>
+    <p>Here is the camera!</p>
+    <!--show webcam video-->
+    <video id="webcam" width="640" height="480" autoplay></video>
+  </body>
+
+  <script>
+    let video = document.getElementById("webcam");
+
+    if (navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then(function (stream) {
+          video.srcObject = stream;
+        })
+        .catch(function (e) {
+          console.log("Something went wrong!");
+        });
+    }
+  </script>
+</html>
